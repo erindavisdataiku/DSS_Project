@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676823544520
+    "lastModifiedOn": 1676826078298
   },
   "creationTag": {
     "versionNumber": 0,
@@ -71,6 +71,7 @@
       {"name":"CRSElapsedTime","type":"bigint"},
       {"name":"AirTime","type":"string","maxLength":4194304},
       {"name":"ArrDelay","type":"string","maxLength":4194304},
+      {"name":"Late","type":"boolean"},
       {"name":"Origin","type":"string","maxLength":4194304},
       {"name":"Dest","type":"string","maxLength":4194304},
       {"name":"Distance","type":"bigint"},
