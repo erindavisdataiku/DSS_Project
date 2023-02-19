@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676822120366
+    "lastModifiedOn": 1676832580775
   },
   "creationTag": {
     "versionNumber": 0,
@@ -104,6 +104,71 @@
           "level": 0
         },
         "configuration": {}
+      },
+      {
+        "type": "col_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns statistics",
+          "level": 2
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "adv_col_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Most frequent values",
+          "level": 3
+        },
+        "configuration": {
+          "aggregates": [],
+          "numberTopValues": 10
+        }
+      },
+      {
+        "type": "percentile_stats",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Columns percentiles",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "verify_col",
+        "enabled": false,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Data validity",
+          "level": 4
+        },
+        "configuration": {
+          "aggregates": []
+        }
+      },
+      {
+        "type": "sql_query",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "SQL probe",
+          "level": 9
+        },
+        "configuration": {
+          "code": "SELECT count(*) as ArrDelay_NA FROM ${DKU_DATASET_TABLE_NAME} where (\"ArrDelay\" \u003d \u0027NA\u0027);\n",
+          "canRunOnImpala": true,
+          "singleAggregate": false,
+          "perColumn": false,
+          "columns": []
+        }
       }
     ],
     "engineConfig": {
@@ -147,6 +212,7 @@
       "python": {}
     },
     "displayedState": {
+      "partition": "NP",
       "columns": [],
       "metrics": [
         "basic:COUNT_COLUMNS",
@@ -158,6 +224,7 @@
     "runOnBuild": false,
     "checks": [],
     "displayedState": {
+      "partition": "NP",
       "checks": []
     }
   },
