@@ -3,18 +3,18 @@
   "name": "Build Final Datasets",
   "active": false,
   "creationTag": {
-    "versionNumber": 2,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676834673999
-  },
-  "versionTag": {
     "versionNumber": 3,
     "lastModifiedBy": {
       "login": "admin"
     },
     "lastModifiedOn": 1676834680963
+  },
+  "versionTag": {
+    "versionNumber": 4,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1676834813776
   },
   "checklists": {
     "checklists": []
@@ -67,7 +67,40 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "checks": [],
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "flight_data_copy1",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_d_flights_and_airports",
+        "type": "build_flowitem",
+        "name": "final output datasets",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "flights_and_airports",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
         }
