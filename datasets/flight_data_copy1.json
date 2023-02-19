@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676832871293
+    "lastModifiedOn": 1676833054998
   },
   "creationTag": {
     "versionNumber": 0,
@@ -223,7 +223,25 @@
   },
   "metricsChecks": {
     "runOnBuild": false,
-    "checks": [],
+    "checks": [
+      {
+        "metricId": "sql_query:ARRDELAY_NA:SQL probe",
+        "minimum": 0.0,
+        "maximum": 15000.0,
+        "softMinimum": 0.0,
+        "softMaximum": 8000.0,
+        "minimumEnabled": false,
+        "maximumEnabled": true,
+        "softMinimumEnabled": false,
+        "softMaximumEnabled": true,
+        "type": "numericRange",
+        "meta": {
+          "name": "Value in range",
+          "label": "ArrDelay_NA_Acceptable"
+        },
+        "computeOnBuildMode": "PARTITION"
+      }
+    ],
     "displayedState": {
       "partition": "NP",
       "checks": []
