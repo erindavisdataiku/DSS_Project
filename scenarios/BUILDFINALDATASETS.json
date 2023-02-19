@@ -3,18 +3,18 @@
   "name": "Build Final Datasets",
   "active": false,
   "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676834169422
-  },
-  "versionTag": {
     "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
     "lastModifiedOn": 1676834573300
+  },
+  "versionTag": {
+    "versionNumber": 2,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1676834673999
   },
   "checklists": {
     "checklists": []
@@ -50,6 +50,25 @@
               "partitionsSpec": ""
             }
           ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_WARNING",
+        "type": "check_dataset",
+        "name": "Step #2",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [],
+          "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
         }
       }
