@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676827836908
+    "lastModifiedOn": 1676828347740
   },
   "creationTag": {
     "versionNumber": 0,
@@ -61,8 +61,26 @@
     "numPartitions": -1
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"departure_date","type":"string","maxLength":4194304},
+      {"name":"arrival_date","type":"string","maxLength":4194304},
+      {"name":"UniqueCarrier","type":"string","maxLength":4194304},
+      {"name":"FlightNum","type":"bigint"},
+      {"name":"TailNum","type":"string","maxLength":4194304},
+      {"name":"ActualElapsedTime","type":"double"},
+      {"name":"CRSElapsedTime","type":"double"},
+      {"name":"AirTime","type":"double"},
+      {"name":"ArrDelay","type":"double"},
+      {"name":"Origin","type":"string","maxLength":4194304},
+      {"name":"Dest","type":"string","maxLength":4194304},
+      {"name":"Distance","type":"bigint"},
+      {"name":"TaxiIn","type":"double"},
+      {"name":"TaxiOut","type":"double"},
+      {"name":"Cancelled","type":"bigint"},
+      {"name":"CancellationCode","type":"string","maxLength":4194304},
+      {"name":"Diverted","type":"bigint"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
