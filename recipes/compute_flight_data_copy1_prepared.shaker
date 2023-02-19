@@ -28,8 +28,83 @@
   },
   "explorationFilters": [],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FilterOnBadType",
+      "params": {
+        "booleanMode": "AND",
+        "columns": [
+          "ArrDelay"
+        ],
+        "action": "REMOVE_ROW",
+        "appliesTo": "SINGLE_COLUMN",
+        "type": "LongMeaning"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "24:0",
+            "to": "00:00"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "departure_date",
+          "arrival_date"
+        ],
+        "appliesTo": "COLUMNS",
+        "stopAfterFirstMatch": false,
+        "matching": "SUBSTRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "departure_date_parsed",
+        "formats": [
+          "yyyy-MM-dd HH:mm"
+        ],
+        "columns": [
+          "departure_date",
+          "arrival_date"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "COLUMNS",
+        "lang": "en_US"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "ArrDelay\u003e15",
+        "column": "Late"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -55,7 +130,27 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "FlightNum": 100,
+    "Origin": 100,
+    "Dest": 100,
+    "CancellationCode": 135,
+    "Late": 100,
+    "TaxiIn": 100,
+    "departure_date": 148,
+    "AirTime": 100,
+    "UniqueCarrier": 113,
+    "ArrDelay": 100,
+    "Cancelled": 100,
+    "Diverted": 100,
+    "TaxiOut": 100,
+    "ActualElapsedTime": 143,
+    "CRSElapsedTime": 120,
+    "departure_date_parsed": 197,
+    "arrival_date": 134,
+    "TailNum": 100,
+    "Distance": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
