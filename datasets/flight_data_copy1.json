@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676832645437
+    "lastModifiedOn": 1676832871293
   },
   "creationTag": {
     "versionNumber": 0,
@@ -216,7 +216,8 @@
       "columns": [],
       "metrics": [
         "basic:COUNT_COLUMNS",
-        "records:COUNT_RECORDS"
+        "records:COUNT_RECORDS",
+        "sql_query:ARRDELAY_NA:SQL probe"
       ]
     }
   },
