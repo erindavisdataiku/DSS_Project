@@ -1,0 +1,192 @@
+{
+  "joins": [
+    {
+      "table2": 1,
+      "table1": 0,
+      "conditionsMode": "AND",
+      "type": "LEFT",
+      "outerJoinOnTheLeft": true,
+      "on": []
+    }
+  ],
+  "selectedColumns": [
+    {
+      "name": "departure_date",
+      "table": 0
+    },
+    {
+      "name": "arrival_date",
+      "table": 0
+    },
+    {
+      "name": "UniqueCarrier",
+      "table": 0
+    },
+    {
+      "name": "FlightNum",
+      "table": 0
+    },
+    {
+      "name": "TailNum",
+      "table": 0
+    },
+    {
+      "name": "ActualElapsedTime",
+      "table": 0
+    },
+    {
+      "name": "CRSElapsedTime",
+      "table": 0
+    },
+    {
+      "name": "AirTime",
+      "table": 0
+    },
+    {
+      "name": "ArrDelay",
+      "table": 0
+    },
+    {
+      "name": "Late",
+      "table": 0
+    },
+    {
+      "name": "Origin",
+      "table": 0
+    },
+    {
+      "name": "Dest",
+      "table": 0
+    },
+    {
+      "name": "Distance",
+      "table": 0
+    },
+    {
+      "name": "TaxiIn",
+      "table": 0
+    },
+    {
+      "name": "TaxiOut",
+      "table": 0
+    },
+    {
+      "name": "Cancelled",
+      "table": 0
+    },
+    {
+      "name": "CancellationCode",
+      "table": 0
+    },
+    {
+      "name": "Diverted",
+      "table": 0
+    },
+    {
+      "name": "Airport_ID",
+      "table": 1
+    },
+    {
+      "name": "Name",
+      "table": 1
+    },
+    {
+      "name": "City",
+      "table": 1
+    },
+    {
+      "name": "Country",
+      "table": 1
+    },
+    {
+      "name": "IATA_FAA",
+      "table": 1
+    },
+    {
+      "name": "ICAO",
+      "table": 1
+    },
+    {
+      "name": "Latitude",
+      "table": 1
+    },
+    {
+      "name": "Longitude",
+      "table": 1
+    },
+    {
+      "name": "Altitude",
+      "table": 1
+    },
+    {
+      "name": "Timezone",
+      "table": 1
+    },
+    {
+      "name": "DST",
+      "table": 1
+    },
+    {
+      "name": "Tz_database_time_zone",
+      "table": 1
+    }
+  ],
+  "resolvedSelectedColumns": [],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "autoSelectColumns": false,
+      "originLabel": "flight_data_copy1_prepared",
+      "index": 0,
+      "computedColumns": []
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "autoSelectColumns": false,
+      "originLabel": "airport_filtered_copy",
+      "index": 1,
+      "computedColumns": []
+    }
+  ],
+  "enableAutoCastInJoinConditions": false
+}
