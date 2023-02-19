@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676831047021
+    "lastModifiedOn": 1676831076389
   },
   "creationTag": {
     "versionNumber": 0,
@@ -61,7 +61,36 @@
     "numPartitions": -1
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"departure_date","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"arrival_date","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"UniqueCarrier","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"FlightNum","type":"bigint","originalType":"NUMBER"},
+      {"name":"TailNum","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"ActualElapsedTime","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"CRSElapsedTime","type":"bigint","originalType":"NUMBER"},
+      {"name":"AirTime","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"ArrDelay","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"Late","type":"boolean","originalType":"BOOLEAN"},
+      {"name":"Origin","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"Dest","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"Distance","type":"bigint","originalType":"NUMBER"},
+      {"name":"TaxiIn","type":"bigint","originalType":"NUMBER"},
+      {"name":"TaxiOut","type":"bigint","originalType":"NUMBER"},
+      {"name":"Cancelled","type":"bigint","originalType":"NUMBER"},
+      {"name":"CancellationCode","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"Diverted","type":"bigint","originalType":"NUMBER"},
+      {"name":"origin_City","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"origin_Country","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"origin_Latitude","type":"double","originalType":"DOUBLE"},
+      {"name":"origin_Longitude","type":"double","originalType":"DOUBLE"},
+      {"name":"origin_Altitude","type":"bigint","originalType":"NUMBER"},
+      {"name":"dest_City","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"dest_Country","type":"string","originalType":"VARCHAR","maxLength":4194304},
+      {"name":"dest_Latitude","type":"double","originalType":"DOUBLE"},
+      {"name":"dest_Longitude","type":"double","originalType":"DOUBLE"},
+      {"name":"dest_Altitude","type":"bigint","originalType":"NUMBER"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
