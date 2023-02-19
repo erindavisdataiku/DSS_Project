@@ -9,10 +9,10 @@ scenario = Scenario()
 
 # Compute metrics
 
-scenario.compute_dataset_metrics("flight_data_copy_1")
+scenario.compute_dataset_metrics("flight_data_copy1")
 
 #Run checks
-scenario.run_dataset_checks("flight_data_copy_1")
+scenario.run_dataset_checks("flight_data_copy1")
 
 # Building a dataset
 scenario.build_dataset("flights_and_airports")
