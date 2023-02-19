@@ -29,11 +29,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676829931790
+    "lastModifiedOn": 1676830603618
   },
   "creationTag": {
     "versionNumber": 0,
@@ -80,18 +80,16 @@
       {"name":"Cancelled","type":"bigint"},
       {"name":"CancellationCode","type":"string","maxLength":4194304},
       {"name":"Diverted","type":"bigint"},
-      {"name":"Airport_ID","type":"bigint"},
-      {"name":"Name","type":"string","maxLength":4194304},
-      {"name":"City","type":"string","maxLength":4194304},
-      {"name":"Country","type":"string","maxLength":4194304},
-      {"name":"IATA_FAA","type":"string","maxLength":4194304},
-      {"name":"ICAO","type":"string","maxLength":4194304},
-      {"name":"Latitude","type":"double"},
-      {"name":"Longitude","type":"double"},
-      {"name":"Altitude","type":"bigint"},
-      {"name":"Timezone","type":"double"},
-      {"name":"DST","type":"string","maxLength":4194304},
-      {"name":"Tz_database_time_zone","type":"string","maxLength":4194304}
+      {"name":"origin_City","type":"string","maxLength":4194304},
+      {"name":"origin_Country","type":"string","maxLength":4194304},
+      {"name":"origin_Latitude","type":"double"},
+      {"name":"origin_Longitude","type":"double"},
+      {"name":"origin_Altitude","type":"bigint"},
+      {"name":"dest_City","type":"string","maxLength":4194304},
+      {"name":"dest_Country","type":"string","maxLength":4194304},
+      {"name":"dest_Latitude","type":"double"},
+      {"name":"dest_Longitude","type":"double"},
+      {"name":"dest_Altitude","type":"bigint"}
     ],
     "userModified": true
   },
