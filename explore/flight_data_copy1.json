@@ -47,7 +47,7 @@
       "countDistinct": true,
       "advanced": true,
       "percentile": false,
-      "validity": false,
+      "validity": true,
       "updateOnAnalyzeBoxOpen": false,
       "computeCostFreeMetrics": false,
       "numberTopValues": 10
@@ -104,7 +104,7 @@
         "maxReadUncompressedBytes": -1
       },
       "autoRefreshSample": false,
-      "_refreshTrigger": 0
+      "_refreshTrigger": 1676832621310
     },
     "vizSampling": {
       "selection": {
