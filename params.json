@@ -133,8 +133,9 @@
     },
     "dkuProperties": []
   },
-  "name": "Apollo_Workshop1",
+  "name": "Data Engineering Workshop",
   "projectStatus": "Sandbox",
+  "imgPattern": 5,
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -190,11 +191,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676830866677
+    "lastModifiedOn": 1683233024304
   },
   "creationTag": {
     "versionNumber": 0,
@@ -203,7 +204,7 @@
     },
     "lastModifiedOn": 1676819817046
   },
-  "shortDesc": "The project *Apollo_Workshop1* was created by Administrator on Feb 19th 2023",
+  "shortDesc": "",
   "tags": [],
   "customFields": {},
   "checklists": {
