@@ -1,5 +1,5 @@
 {
-  "type": "PostgreSQL",
+  "type": "Databricks",
   "managed": true,
   "featureGroup": false,
   "checklists": {
@@ -28,51 +28,52 @@
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": []
   },
-  "versionTag": {
-    "versionNumber": 1,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676822556221
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676822556218
+    "lastModifiedOn": 1676822556218,
+    "extendedProperties": {}
   },
   "tags": [],
   "params": {
-    "writeWithCopyBadDataBehavior": "NOVERIFY_ERROR",
-    "connection": "postgres",
+    "connection": "ErinsDBX",
     "notReadyIfEmpty": false,
     "mode": "table",
     "partitioningType": "custom",
     "normalizeDoubles": true,
+    "catalog": "se-sandbox",
     "table": "${projectKey}_airport_copy",
+    "schema": "sedemo",
     "tableCreationMode": "auto",
     "writeInsertBatchSize": 10000,
+    "noDropOnSchemaMismatch": false,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
     "readColsWithUnknownTzAsDates": false,
     "readSQLDateColsAsDSSDates": true,
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    },
     "sparkJdbcAccess": "NONE",
     "numPartitions": -1
   },
   "schema": {
     "columns": [
       {"name":"Airport_ID","type":"bigint"},
-      {"name":"Name","type":"string"},
-      {"name":"City","type":"string"},
-      {"name":"Country","type":"string"},
-      {"name":"IATA_FAA","type":"string"},
-      {"name":"ICAO","type":"string"},
+      {"name":"Name","type":"string","maxLength":65500},
+      {"name":"City","type":"string","maxLength":65500},
+      {"name":"Country","type":"string","maxLength":65500},
+      {"name":"IATA_FAA","type":"string","maxLength":65500},
+      {"name":"ICAO","type":"string","maxLength":65500},
       {"name":"Latitude","type":"double"},
       {"name":"Longitude","type":"double"},
       {"name":"Altitude","type":"bigint"},
       {"name":"Timezone","type":"double"},
-      {"name":"DST","type":"string"},
-      {"name":"Tz_database_time_zone","type":"string"}
+      {"name":"DST","type":"string","maxLength":65500},
+      {"name":"Tz_database_time_zone","type":"string","maxLength":65500}
     ],
     "userModified": true
   },
@@ -124,6 +125,7 @@
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
+          "ascending": true,
           "withinFirstN": -1,
           "maxReadUncompressedBytes": -1
         }
@@ -149,7 +151,7 @@
     }
   },
   "metricsChecks": {
-    "runOnBuild": false,
+    "monitor": false,
     "checks": [],
     "displayedState": {
       "checks": []
