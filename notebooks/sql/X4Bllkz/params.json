@@ -1,0 +1,38 @@
+{
+  "connection": "SEDEMO",
+  "name": "notebook editor for compute_flights_and_airports_viaSQL",
+  "recipeId": "compute_flights_and_airports_viaSQL",
+  "cells": [
+    {
+      "id": "U7VPyyPiM6AW",
+      "type": "QUERY",
+      "name": "Created from \u0027compute_flights_and_airports_viaSQL\u0027 recipe on Fri, 11 Oct 2024 16:16:19 GMT",
+      "code": "SELECT \n    \"flight_data_copy1_prepared\".\"departure_date\" AS \"departure_date\",\n    \"flight_data_copy1_prepared\".\"arrival_date\" AS \"arrival_date\",\n    \"flight_data_copy1_prepared\".\"UniqueCarrier\" AS \"UniqueCarrier\",\n    \"flight_data_copy1_prepared\".\"FlightNum\" AS \"FlightNum\",\n    \"flight_data_copy1_prepared\".\"TailNum\" AS \"TailNum\",\n    \"flight_data_copy1_prepared\".\"ActualElapsedTime\" AS \"ActualElapsedTime\",\n    \"flight_data_copy1_prepared\".\"CRSElapsedTime\" AS \"CRSElapsedTime\",\n    \"flight_data_copy1_prepared\".\"AirTime\" AS \"AirTime\",\n    \"flight_data_copy1_prepared\".\"ArrDelay\" AS \"ArrDelay\",\n    \"flight_data_copy1_prepared\".\"Late\" AS \"Late\",\n    \"flight_data_copy1_prepared\".\"Origin\" AS \"Origin\",\n    \"flight_data_copy1_prepared\".\"Dest\" AS \"Dest\",\n    \"flight_data_copy1_prepared\".\"Distance\" AS \"Distance\",\n    \"flight_data_copy1_prepared\".\"TaxiIn\" AS \"TaxiIn\",\n    \"flight_data_copy1_prepared\".\"TaxiOut\" AS \"TaxiOut\",\n    \"flight_data_copy1_prepared\".\"Cancelled\" AS \"Cancelled\",\n    \"flight_data_copy1_prepared\".\"CancellationCode\" AS \"CancellationCode\",\n    \"flight_data_copy1_prepared\".\"Diverted\" AS \"Diverted\",\n    \"airport_filtered_copy\".\"City\" AS \"origin_City\",\n    \"airport_filtered_copy\".\"Country\" AS \"origin_Country\",\n    \"airport_filtered_copy\".\"Latitude\" AS \"origin_Latitude\",\n    \"airport_filtered_copy\".\"Longitude\" AS \"origin_Longitude\",\n    \"airport_filtered_copy\".\"Altitude\" AS \"origin_Altitude\",\n    \"airport_filtered_copy_2\".\"City\" AS \"dest_City\",\n    \"airport_filtered_copy_2\".\"Country\" AS \"dest_Country\",\n    \"airport_filtered_copy_2\".\"Latitude\" AS \"dest_Latitude\",\n    \"airport_filtered_copy_2\".\"Longitude\" AS \"dest_Longitude\",\n    \"airport_filtered_copy_2\".\"Altitude\" AS \"dest_Altitude\"\n  FROM \"SEDEMO\".\"ERIND\".\"FLIGHT_DATA_COPY1_PREPARED\" \"flight_data_copy1_prepared\"\n  LEFT JOIN \"SEDEMO\".\"ERIND\".\"AIRPORT_FILTERED_COPY\" \"airport_filtered_copy\"\n    ON \"flight_data_copy1_prepared\".\"Origin\" \u003d \"airport_filtered_copy\".\"IATA_FAA\"\n  LEFT JOIN \"SEDEMO\".\"ERIND\".\"AIRPORT_FILTERED_COPY\" \"airport_filtered_copy_2\"\n    ON \"flight_data_copy1_prepared\".\"Dest\" \u003d \"airport_filtered_copy_2\".\"IATA_FAA\"",
+      "querySettings": {
+        "addLimitToStatement": true,
+        "statementsOutOfTransaction": false,
+        "inheritConf": "default",
+        "extraConf": [],
+        "addDkuUdf": false,
+        "statementsParseMode": "SPLIT",
+        "statementsExecutionMode": "PREPARED"
+      }
+    }
+  ],
+  "automationLocal": false,
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1728663379439,
+    "extendedProperties": {}
+  },
+  "tags": [
+    "recipe-editor"
+  ],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
