@@ -1,34 +1,38 @@
 {
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1676819817049,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "Apollo_Workshop1's default dashboard",
+  "owner": "admin",
   "pages": [
     {
-      "id": "OoMPuNO",
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
       "grid": {
         "tiles": []
       },
+      "id": "OoMPuNO",
       "showTitle": false
     }
   ],
-  "owner": "admin",
-  "listed": true,
-  "name": "Apollo_Workshop1\u0027s default dashboard",
   "showGrid": true,
-  "versionTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676819817049
-  },
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676819817049
-  },
   "tags": [],
-  "customFields": {},
-  "checklists": {
-    "checklists": []
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1676819817049,
+    "versionNumber": 0
   }
 }
