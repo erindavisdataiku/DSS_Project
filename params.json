@@ -1,10 +1,44 @@
 {
   "dashboardAuthorizations": {
     "allAuthorized": false,
-    "authorizations": []
+    "authorizations": [
+      {
+        "objectRef": {
+          "objectId": "flight_data",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "DISCOVER",
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "airport",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "DISCOVER",
+          "READ"
+        ]
+      }
+    ]
   },
   "exposedObjects": {
-    "objects": []
+    "objects": [
+      {
+        "type": "DATASET",
+        "localName": "flight_data",
+        "quickSharingEnabled": true,
+        "rules": []
+      },
+      {
+        "type": "DATASET",
+        "localName": "airport",
+        "quickSharingEnabled": true,
+        "rules": []
+      }
+    ]
   },
   "projectType": "REGULAR",
   "projectAppType": "REGULAR",
@@ -20,7 +54,8 @@
     "flowAnchorSourcesAndSinks": true,
     "flowDisplaySettings": {
       "zonesGraphRenderingAlgorithm": "DOT_OLDRANK",
-      "zonesGraphConnectZones": true
+      "zonesGraphConnectZones": true,
+      "zonesGraphForJobs": true
     },
     "gitCommitMode": "AUTO",
     "disableAutomaticTriggers": false,
@@ -31,7 +66,8 @@
       "mergeSparkPipelines": false,
       "pruneBeforeSparkPipelines": true,
       "mergeSqlPipelines": false,
-      "pruneBeforeSqlPipelines": true
+      "pruneBeforeSqlPipelines": true,
+      "defaultRecipeHashPropagationBehavior": "ENABLED"
     },
     "sharingRequestsEnabled": "INHERIT",
     "limitedVisibilityEnabled": "INHERIT",
@@ -74,6 +110,9 @@
       }
     },
     "container": {
+      "containerMode": "INHERIT"
+    },
+    "containerForVisualRecipesWorkloads": {
       "containerMode": "INHERIT"
     },
     "datasetsCreationSettings": {
@@ -162,6 +201,7 @@
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
+          "ascending": true,
           "withinFirstN": -1,
           "maxReadUncompressedBytes": -1
         }
@@ -190,19 +230,13 @@
       "checks": []
     }
   },
-  "versionTag": {
-    "versionNumber": 4,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1683233024304
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676819817046
+    "lastModifiedOn": 1676819817046,
+    "extendedProperties": {}
   },
   "shortDesc": "",
   "tags": [],
