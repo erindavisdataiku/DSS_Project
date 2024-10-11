@@ -1,7 +1,6 @@
 {
   "type": "sync",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "schemaMode": "STRICT_SYNC",
     "forcePipelineableForTests": false,
@@ -45,7 +44,10 @@
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "lowerCaseSchemaIfEngineRequiresIt": false
+      "lowerCaseSchemaIfEngineRequiresIt": false,
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      }
     }
   },
   "customMeta": {
@@ -53,6 +55,7 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
@@ -69,26 +72,20 @@
     "main": {
       "items": [
         {
-          "ref": "flight_data_copy1",
+          "ref": "flight_data_copy",
           "appendMode": false
         }
       ]
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 1,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676822208123
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676822120368
+    "lastModifiedOn": 1676822120368,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},

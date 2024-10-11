@@ -1,7 +1,6 @@
 {
   "type": "shaker",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "engineType": "SQL",
     "engineParams": {
@@ -10,7 +9,7 @@
           "mode": "AUTO",
           "autoModeRepartitionInto": 10,
           "map": {
-            "flight_data_copy1": {
+            "flight_data_copy": {
               "repartition": 10
             }
           }
@@ -41,7 +40,10 @@
         "pipelineAllowStart": true,
         "pipelineAllowMerge": true
       },
-      "maxThreads": 8
+      "maxThreads": 8,
+      "containerSelection": {
+        "containerMode": "INHERIT"
+      }
     }
   },
   "customMeta": {
@@ -49,13 +51,14 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
     "main": {
       "items": [
         {
-          "ref": "flight_data_copy1",
+          "ref": "flight_data_copy",
           "deps": []
         }
       ]
@@ -72,19 +75,13 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 2,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676826079852
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676823544523
+    "lastModifiedOn": 1676823544523,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},

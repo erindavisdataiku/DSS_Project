@@ -4,7 +4,8 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Read recipe inputs
-flight_data_copy1 = dataiku.Dataset("flight_data_copy1")
+# Dataset flight_data_copy1 renamed to flight_data_copy by admin on 2024-10-11 11:30:02
+flight_data_copy1 = dataiku.Dataset("flight_data_copy")
 flight_data_copy1_df = flight_data_copy1.get_dataframe()
 
 

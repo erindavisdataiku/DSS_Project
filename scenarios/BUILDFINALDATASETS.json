@@ -3,18 +3,12 @@
   "name": "Build Final Datasets",
   "active": false,
   "creationTag": {
-    "versionNumber": 3,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676834680963
-  },
-  "versionTag": {
     "versionNumber": 4,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676834813776
+    "lastModifiedOn": 1676834813776,
+    "extendedProperties": {}
   },
   "checklists": {
     "checklists": []
@@ -33,6 +27,7 @@
         "id": "comp_metrics_d_flight_data_copy1",
         "type": "compute_metrics",
         "name": "on raw flight data in Snowflake",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -46,7 +41,7 @@
           "computes": [
             {
               "type": "DATASET",
-              "itemId": "flight_data_copy1",
+              "itemId": "flight_data_copy",
               "partitionsSpec": ""
             }
           ],
@@ -57,6 +52,7 @@
         "id": "check_WARNING",
         "type": "check_dataset",
         "name": "on raw flight data in Snowflake",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -70,11 +66,13 @@
           "checks": [
             {
               "type": "DATASET",
-              "itemId": "flight_data_copy1",
+              "itemId": "flight_data_copy",
               "partitionsSpec": ""
             }
           ],
           "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
           "proceedOnFailure": false
         }
       },
@@ -82,6 +80,7 @@
         "id": "build_0_true_d_flights_and_airports",
         "type": "build_flowitem",
         "name": "final output datasets",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -100,6 +99,8 @@
             }
           ],
           "jobType": "RECURSIVE_BUILD",
+          "autoUpdateSchemaBeforeEachRecipeRun": false,
+          "stopAtFlowZoneBoundary": false,
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
@@ -108,5 +109,6 @@
     ]
   },
   "automationLocal": false,
-  "customFields": {}
+  "customFields": {},
+  "markedAsTest": false
 }

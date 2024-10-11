@@ -28,19 +28,13 @@
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": []
   },
-  "versionTag": {
-    "versionNumber": 7,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676833201785
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676822120362
+    "lastModifiedOn": 1676822120362,
+    "extendedProperties": {}
   },
   "tags": [],
   "params": {
@@ -54,9 +48,15 @@
     "schema": "ERIND",
     "tableCreationMode": "auto",
     "writeInsertBatchSize": 10000,
+    "noDropOnSchemaMismatch": false,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
     "readColsWithUnknownTzAsDates": false,
     "readSQLDateColsAsDSSDates": true,
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    },
     "sparkJdbcAccess": "NONE",
     "numPartitions": -1
   },
@@ -195,6 +195,7 @@
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
+          "ascending": true,
           "withinFirstN": -1,
           "maxReadUncompressedBytes": -1
         }
@@ -222,10 +223,10 @@
     }
   },
   "metricsChecks": {
-    "runOnBuild": false,
+    "monitor": true,
     "checks": [
       {
-        "metricId": "sql_query:ARRDELAY_NA:SQL probe",
+        "type": "numericRange",
         "minimum": 0.0,
         "maximum": 15000.0,
         "softMinimum": 0.0,
@@ -234,12 +235,17 @@
         "maximumEnabled": true,
         "softMinimumEnabled": false,
         "softMaximumEnabled": true,
-        "type": "numericRange",
+        "metricId": "sql_query:ARRDELAY_NA:SQL probe",
+        "autoComputeMetric": false,
         "meta": {
           "name": "Value in range",
           "label": "ArrDelay_NA_Acceptable"
         },
-        "computeOnBuildMode": "PARTITION"
+        "id": "ArrDelay_NA_Acceptable",
+        "displayName": "ArrDelay_NA_Acceptable",
+        "computeOnBuildMode": "PARTITION",
+        "autoRun": false,
+        "enabled": true
       }
     ],
     "displayedState": {
