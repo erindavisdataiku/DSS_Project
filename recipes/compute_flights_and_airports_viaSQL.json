@@ -1,13 +1,17 @@
 {
   "type": "sql_query",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "params": {
     "allowMultipleConnections": false,
     "displayExecutionPlan": true,
     "sqlPipelineParams": {
       "pipelineAllowStart": true,
       "pipelineAllowMerge": true
+    },
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
     },
     "skipPrerunValidate": false
   },
@@ -16,13 +20,14 @@
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
     "main": {
       "items": [
         {
-          "ref": "flight_data_copy1_prepared",
+          "ref": "flight_data_copy_prepared",
           "deps": []
         },
         {
@@ -43,19 +48,13 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 2,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676831083699
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676831050163
+    "lastModifiedOn": 1676831050163,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},

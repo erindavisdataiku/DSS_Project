@@ -28,19 +28,13 @@
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": []
   },
-  "versionTag": {
-    "versionNumber": 1,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676826078298
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676823544520
+    "lastModifiedOn": 1676823544520,
+    "extendedProperties": {}
   },
   "tags": [],
   "params": {
@@ -54,9 +48,15 @@
     "schema": "ERIND",
     "tableCreationMode": "auto",
     "writeInsertBatchSize": 10000,
+    "noDropOnSchemaMismatch": false,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
     "readColsWithUnknownTzAsDates": false,
     "readSQLDateColsAsDSSDates": true,
+    "variablesExpansionLoopConfig": {
+      "enabled": false,
+      "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+      "replacements": []
+    },
     "sparkJdbcAccess": "NONE",
     "numPartitions": -1
   },
@@ -131,6 +131,7 @@
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
+          "ascending": true,
           "withinFirstN": -1,
           "maxReadUncompressedBytes": -1
         }
@@ -156,7 +157,7 @@
     }
   },
   "metricsChecks": {
-    "runOnBuild": false,
+    "monitor": false,
     "checks": [],
     "displayedState": {
       "checks": []

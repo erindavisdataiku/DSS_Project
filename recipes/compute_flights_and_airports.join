@@ -13,11 +13,18 @@
             "table": 0
           },
           "dateDiffUnit": "SECOND",
+          "windowFrom": 0,
           "column2": {
             "name": "IATA_FAA",
             "table": 1
           },
-          "type": "EQ"
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false,
+          "windowTo": 0
         }
       ]
     },
@@ -25,7 +32,11 @@
       "table2": 2,
       "table1": 0,
       "conditionsMode": "AND",
-      "rightLimit": {},
+      "rightLimit": {
+        "maxMatches": 1,
+        "strict": false,
+        "enabled": false
+      },
       "type": "LEFT",
       "outerJoinOnTheLeft": true,
       "on": [
@@ -35,11 +46,18 @@
             "table": 0
           },
           "dateDiffUnit": "SECOND",
+          "windowFrom": 0,
           "column2": {
             "name": "IATA_FAA",
             "table": 2
           },
-          "type": "EQ"
+          "maxMatches": 1,
+          "caseInsensitive": false,
+          "maxDistance": 0,
+          "normalizeText": false,
+          "type": "EQ",
+          "strict": false,
+          "windowTo": 0
         }
       ]
     }
@@ -47,142 +65,114 @@
   "selectedColumns": [
     {
       "name": "departure_date",
-      "type": "string",
       "table": 0
     },
     {
       "name": "arrival_date",
-      "type": "string",
       "table": 0
     },
     {
       "name": "UniqueCarrier",
-      "type": "string",
       "table": 0
     },
     {
       "name": "FlightNum",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "TailNum",
-      "type": "string",
       "table": 0
     },
     {
       "name": "ActualElapsedTime",
-      "type": "string",
       "table": 0
     },
     {
       "name": "CRSElapsedTime",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "AirTime",
-      "type": "string",
       "table": 0
     },
     {
       "name": "ArrDelay",
-      "type": "string",
       "table": 0
     },
     {
       "name": "Late",
-      "type": "boolean",
       "table": 0
     },
     {
       "name": "Origin",
-      "type": "string",
       "table": 0
     },
     {
       "name": "Dest",
-      "type": "string",
       "table": 0
     },
     {
       "name": "Distance",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "TaxiIn",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "TaxiOut",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "Cancelled",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "CancellationCode",
-      "type": "string",
       "table": 0
     },
     {
       "name": "Diverted",
-      "type": "bigint",
       "table": 0
     },
     {
       "name": "City",
-      "type": "string",
       "table": 1
     },
     {
       "name": "Country",
-      "type": "string",
       "table": 1
     },
     {
       "name": "Latitude",
-      "type": "double",
       "table": 1
     },
     {
       "name": "Longitude",
-      "type": "double",
       "table": 1
     },
     {
       "name": "Altitude",
-      "type": "bigint",
       "table": 1
     },
     {
       "name": "City",
-      "type": "string",
       "table": 2
     },
     {
       "name": "Country",
-      "type": "string",
       "table": 2
     },
     {
       "name": "Latitude",
-      "type": "double",
       "table": 2
     },
     {
       "name": "Longitude",
-      "type": "double",
       "table": 2
     },
     {
       "name": "Altitude",
-      "type": "bigint",
       "table": 2
     }
   ],
@@ -201,6 +191,9 @@
     },
     "impala": {
       "forceStreamMode": true
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
     },
     "lowerCaseSchemaIfEngineRequiresIt": true,
     "sparkSQL": {
@@ -223,168 +216,40 @@
   },
   "virtualInputs": [
     {
+      "outputColumnsSelectionMode": "MANUAL",
       "preFilter": {
         "distinct": false,
         "enabled": false
       },
-      "autoSelectColumns": false,
       "originLabel": "flight_data_copy1_prepared",
       "index": 0,
       "computedColumns": []
     },
     {
+      "outputColumnsSelectionMode": "MANUAL",
       "preFilter": {
         "distinct": false,
         "enabled": false
       },
-      "autoSelectColumns": false,
-      "originLabel": "airport_filtered_copy",
       "prefix": "origin",
+      "originLabel": "airport_filtered_copy",
       "index": 1,
       "computedColumns": []
     },
     {
-      "preFilter": {},
-      "autoSelectColumns": false,
+      "outputColumnsSelectionMode": "MANUAL",
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
       "prefix": "dest",
       "index": 1
     }
   ],
-  "computedColumns": [],
   "postFilter": {
-    "$status": {
-      "schema": {
-        "columns": [
-          {
-            "name": "departure_date",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "arrival_date",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "UniqueCarrier",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "FlightNum",
-            "type": "bigint"
-          },
-          {
-            "name": "TailNum",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "ActualElapsedTime",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "CRSElapsedTime",
-            "type": "bigint"
-          },
-          {
-            "name": "AirTime",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "ArrDelay",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "Late",
-            "type": "boolean"
-          },
-          {
-            "name": "Origin",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "Dest",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "Distance",
-            "type": "bigint"
-          },
-          {
-            "name": "TaxiIn",
-            "type": "bigint"
-          },
-          {
-            "name": "TaxiOut",
-            "type": "bigint"
-          },
-          {
-            "name": "Cancelled",
-            "type": "bigint"
-          },
-          {
-            "name": "CancellationCode",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "Diverted",
-            "type": "bigint"
-          },
-          {
-            "name": "origin_City",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "origin_Country",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "origin_Latitude",
-            "type": "double"
-          },
-          {
-            "name": "origin_Longitude",
-            "type": "double"
-          },
-          {
-            "name": "origin_Altitude",
-            "type": "bigint"
-          },
-          {
-            "name": "dest_City",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "dest_Country",
-            "type": "string",
-            "maxLength": 4194304
-          },
-          {
-            "name": "dest_Latitude",
-            "type": "double"
-          },
-          {
-            "name": "dest_Longitude",
-            "type": "double"
-          },
-          {
-            "name": "dest_Altitude",
-            "type": "bigint"
-          }
-        ],
-        "userModified": false
-      }
-    }
+    "distinct": false,
+    "enabled": false
   },
+  "computedColumns": [],
   "enableAutoCastInJoinConditions": false
 }

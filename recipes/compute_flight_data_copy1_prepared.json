@@ -68,7 +68,7 @@
     "main": {
       "items": [
         {
-          "ref": "flight_data_copy1_prepared",
+          "ref": "flight_data_copy_prepared",
           "appendMode": false
         }
       ]

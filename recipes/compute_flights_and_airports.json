@@ -1,19 +1,19 @@
 {
   "type": "join",
   "neverRecomputeExistingPartitions": false,
-  "optionalDependencies": false,
   "customMeta": {
     "kv": {}
   },
   "redispatchPartitioning": false,
   "maxRunningActivities": 0,
+  "hashPropagationBehavior": "INHERIT",
   "variables": {},
   "dkuProperties": [],
   "inputs": {
     "main": {
       "items": [
         {
-          "ref": "flight_data_copy1_prepared",
+          "ref": "flight_data_copy_prepared",
           "deps": []
         },
         {
@@ -34,19 +34,13 @@
     }
   },
   "labels": [],
-  "versionTag": {
-    "versionNumber": 1,
-    "lastModifiedBy": {
-      "login": "admin"
-    },
-    "lastModifiedOn": 1676830605001
-  },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1676829931793
+    "lastModifiedOn": 1676829931793,
+    "extendedProperties": {}
   },
   "tags": [],
   "customFields": {},
