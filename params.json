@@ -48,7 +48,7 @@
   "permissions": [
     {
       "user": "admin_lite",
-      "admin": false,
+      "admin": true,
       "readProjectContent": false,
       "writeProjectContent": true,
       "exportDatasetsData": true,
