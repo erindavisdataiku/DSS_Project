@@ -29,8 +29,65 @@
   },
   "explorationFilters": [],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ss.SSS Z"
+        ],
+        "columns": [
+          "departure_date"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "en_US"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ss.SSS Z"
+        ],
+        "columns": [
+          "arrival_date"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "en_US"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "flight_duration",
+        "input2": "arrival_date",
+        "outputUnit": "MINUTES",
+        "input1": "departure_date",
+        "compareTo": "COLUMN",
+        "reverse": false
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -57,7 +114,37 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "FlightNum": 100,
+    "Origin": 100,
+    "origin_City": 113,
+    "dest_City": 134,
+    "departure_date": 190,
+    "AirTime": 100,
+    "flight_duration": 128,
+    "dest_Altitude": 113,
+    "origin_Country": 148,
+    "dest_Longitude": 148,
+    "CRSElapsedTime": 120,
+    "arrival_date": 190,
+    "Distance": 100,
+    "origin_Longitude": 162,
+    "origin_Latitude": 134,
+    "Late": 100,
+    "Dest": 100,
+    "CancellationCode": 135,
+    "TaxiIn": 100,
+    "origin_Altitude": 128,
+    "dest_Country": 134,
+    "UniqueCarrier": 113,
+    "ArrDelay": 100,
+    "Cancelled": 100,
+    "Diverted": 100,
+    "TaxiOut": 100,
+    "ActualElapsedTime": 143,
+    "dest_Latitude": 141,
+    "TailNum": 100
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
