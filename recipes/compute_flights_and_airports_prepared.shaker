@@ -54,7 +54,7 @@
       "alwaysShowComment": false
     },
     {
-      "preview": true,
+      "preview": false,
       "metaType": "PROCESSOR",
       "disabled": false,
       "type": "DateParser",
@@ -69,6 +69,21 @@
         "timezone_id": "UTC",
         "appliesTo": "SINGLE_COLUMN",
         "lang": "en_US"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "flight_duration",
+        "input2": "arrival_date",
+        "outputUnit": "MINUTES",
+        "input1": "departure_date",
+        "compareTo": "COLUMN",
+        "reverse": false
       },
       "alwaysShowComment": false
     }
@@ -107,6 +122,7 @@
     "departure_date": 190,
     "AirTime": 100,
     "arrival_date_parsed": 183,
+    "flight_duration": 128,
     "dest_Altitude": 113,
     "origin_Country": 148,
     "dest_Longitude": 148,
@@ -119,6 +135,7 @@
     "Late": 100,
     "Dest": 100,
     "CancellationCode": 135,
+    "since_arrival_date_days": 188,
     "TaxiIn": 100,
     "origin_Altitude": 128,
     "dest_Country": 134,
