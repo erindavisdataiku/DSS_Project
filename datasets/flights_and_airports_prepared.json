@@ -63,6 +63,7 @@
   "schema": {
     "columns": [
       {"name":"departure_date","type":"string","maxLength":4194304},
+      {"name":"flight_duration","type":"bigint"},
       {"name":"arrival_date","type":"string","maxLength":4194304},
       {"name":"UniqueCarrier","type":"string","maxLength":4194304},
       {"name":"FlightNum","type":"bigint"},
